@@ -13,3 +13,6 @@ requires "nim >= 0.19.4"
 
 task genDocs, "Create code documentation for sonic":
     exec "nim doc --threads:on --project src/sonic.nim && rm -rf docs/api; mkdir -p docs && mv src/htmldocs docs/api "
+
+task test, "Run tests":
+  exec "nim c -r tests/main.nim"
